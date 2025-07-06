@@ -1,6 +1,7 @@
 
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, LogoutView
+from django.views.generic import CreateView
 from django.shortcuts import redirect, render
 
 # 함수기반 뷰 (Function Based View, FBV)
@@ -29,6 +30,8 @@ def register(request):
 # pass
 
 login = LoginView.as_view()
+
+logout = LogoutView.as_view()
 
 def profile(request):
     return render(request, "accounts/profile.html")

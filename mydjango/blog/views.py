@@ -1,9 +1,15 @@
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import get_object_or_404, redirect, render
+from .models import Post
 
 # 게시글 작성 기능 구현
 # blog/write
 
 def post_new(request):
+    # 로그인 여부 판단
+    # 미로그인 상황에서는 로그인 주소로 이동을 시킨다
+    if not request.user.is_authenticated:
+        return redirect('/login')
     return render(request, 'blog/post_form.html')
 
 #  뷰 함수 이름은 현재 py 파일 내에서만 유일하면 된다.
@@ -21,12 +27,25 @@ def post_detail(request, id: int):
 
 # 게시글 검색 기능 구현
 #  /blog/search/<str:tag>
+
 def post_search(request, tag: str):
+    # qs = Post.objects.all()
+    # qs = qs.filter()
     return render(request, 'blog/post_search.html')
 
 # 게시글 수정 기능 구현
 #  /blog/edit/<int:id>
 def post_edit(request, id: int):
+    post = get_object_or_404(Post, id=id)
+    # 글 작성자 정보가 post.author 라는 User 모델 외래키 필드가 있다면?
+    
+    if not request.user.is_authenticated:
+        messages.info(request, '글을 수정하려면 로그인이 필요합니다.')
+        return redirect('/login')
+    # 본인 글이 아니라면, 로그인 페이지로 이동, 혹은 에러 템플릿 응답?
+    if request.user != post.author:
+        messages.info(request, '본인 글만 수정할 수 있습니다.')
+        return redirect('/login')
     return render(request, 'blog/post_form.html')
 
 # 게시글 삭제 기능 구현
