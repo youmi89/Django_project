@@ -27,7 +27,6 @@ def post_detail(request, id: int):
 
 # 게시글 검색 기능 구현
 #  /blog/search/<str:tag>
-
 def post_search(request, tag: str):
     # qs = Post.objects.all()
     # qs = qs.filter()
