@@ -10,5 +10,7 @@ urlpatterns = [
 
     path('', include('accounts.urls')),
 
+    path('blog', include('blog.urls')),
+
     path('', root),
 ]
