@@ -8,9 +8,9 @@ def root(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', include('accounts.urls')),
-
+    path('', include('blog.urls')),
+    
     path('blog', include('blog.urls')),
-
-    path('', root),
 ]
+#     path('', root),
+# ]
