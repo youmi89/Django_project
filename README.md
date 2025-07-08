@@ -2,11 +2,8 @@
 
 🎯 주요 기능 구현 목표
 
--충남 여행지 검색 및 필터링
-
--여행 코스 추천 시스템
-
--지역별 카테고리 분류
+-충남 여행지 카테고리선택, 글작성 
+-blog login, logout, 회원가입 구현
 
 -사용자 리뷰 및 평점 시스템
 
@@ -46,3 +43,7 @@ gantt
     section 완료단계
     기능테스트+버그수정         :test, 2025-07-08, 1d
     최종점검+문서작성           :final, 2025-07-09, 1d ```
+
+## blog구현
+![blog logout](https://github.com/user-attachments/assets/d736f113-ed56-461d-b262-5c13b8ab8348)
+
