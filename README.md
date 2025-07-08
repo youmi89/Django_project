@@ -46,6 +46,6 @@ gantt
 
 
 
-![image](https://github.com/user-attachments/assets/0e2a6d3f-3330-4292-8399-134530f75482)
+
 
 
