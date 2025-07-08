@@ -44,6 +44,7 @@ gantt
     기능테스트+버그수정         :test, 2025-07-08, 1d
     최종점검+문서작성           :final, 2025-07-09, 1d ```
 
-## blog구현
-![blog logout](https://github.com/user-attachments/assets/d736f113-ed56-461d-b262-5c13b8ab8348)
+
+
+
 
